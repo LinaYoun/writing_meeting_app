@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "mcp__plugin_context7_context7__resolve-library-id",
+      "mcp__plugin_context7_context7__query-docs",
+      "Bash(flutter pub get:*)",
+      "Bash(flutter test:*)",
+      "Bash(flutter analyze:*)",
+      "Bash(find:*)",
+      "Bash(flutter pub list:*)",
+      "Bash(flutter devices:*)",
+      "Bash(flutter clean:*)",
+      "Bash(flutter build apk --debug)",
+      "WebSearch",
+      "WebFetch(domain:pub.dev)",
+      "WebFetch(domain:github.com)",
+      "Bash(flutter build:*)",
+      "Bash(flutter pub:*)",
+      "WebFetch(domain:tutorials.logto.io)",
+      "WebFetch(domain:mvnrepository.com)",
+      "WebFetch(domain:velog.io)",
+      "WebFetch(domain:developers.naver.com)"
+    ]
+  }
+}

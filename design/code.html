@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Home Curation Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#24748f",
+                        "background-light": "#f5f2f0",
+                        "background-dark": "#16181d",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .essay-snippet {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between p-4 pb-2">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm">auto_stories</span>
+</div>
+<h1 class="text-lg font-bold tracking-tight dark:text-white">Curation</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-full border border-primary/20">
+<span class="text-[10px] font-bold text-primary tracking-widest uppercase">Naver</span>
+<span class="material-symbols-outlined text-primary text-xs">sync</span>
+</div>
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">notifications</span>
+</button>
+</div>
+</div>
+<div class="px-4 py-3">
+<div class="flex h-11 items-center justify-center rounded-xl bg-slate-200/50 dark:bg-slate-800/50 p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm text-slate-500 dark:text-slate-400 has-[:checked]:text-primary dark:has-[:checked]:text-white transition-all">
+<span class="text-sm font-semibold">Following</span>
+<input checked="" class="invisible w-0" name="feed-toggle" type="radio" value="Following"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm text-slate-500 dark:text-slate-400 has-[:checked]:text-primary dark:has-[:checked]:text-white transition-all">
+<span class="text-sm font-semibold">Interests</span>
+<input class="invisible w-0" name="feed-toggle" type="radio" value="Interests"/>
+</label>
+</div>
+</div>
+</header>
+<main class="max-w-md mx-auto pb-24">
+<article class="mt-4 px-4">
+<div class="flex items-center gap-3 mb-3">
+<div class="size-10 rounded-full border-2 border-primary/20 bg-center bg-cover" data-alt="Portrait of male essay author Min-seo Kim" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuARydCpeGqtrW97Dw1L0aPqngWjRdClSMZlz4k0C1juTBiXlbtuojJulEozWEbxZuFm20o_5Gk2GP6va1AMYNDMyxi_Sdx4wYtOZNgZoUtq8MDvsaYHHrPLdQsOPW8aEc0zDX4WYK-wrHqzmYG-rEJbLSqnhzu8QBAS4SFsLzcNvbiJArprlqBNoogSgYPawMhwClYEbqDvDDMUgkFzulOp_4t0v-5tDznXxv1frOEHknPhuAyMXXwhwPxE-rs-kMXwvS1INyRpxwQ")'></div>
+<div>
+<div class="flex items-center gap-1">
+<span class="text-sm font-bold dark:text-white">Min-seo Kim</span>
+<span class="material-symbols-outlined text-primary text-[14px]">verified</span>
+</div>
+<p class="text-[11px] text-slate-500 dark:text-slate-400">2 hours ago • Naver Cafe: Literary Seoul</p>
+</div>
+<button class="ml-auto">
+<span class="material-symbols-outlined text-slate-400">more_horiz</span>
+</button>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="w-full aspect-[16/9] bg-center bg-cover" data-alt="Antique typewriter on a wooden desk with coffee" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD4y8KYPAcsnZQ_O1ld_ugo7WdT-hcARsqpi45VoaPpLYDJz0Ra410qM0ALDjRUQcw1HbY_8f78W84zr2MD1422BN1e3NxdA1Bro0u-vfOJ1fin2-5L-DmhZKQfzKJ6Aux43pkqmBt1ksNgEuXLEjBS3X-L5CW4kTFoM5yKcwztKdqxbs2vjZqPi9VwzYuYIhb-M0XbEUcPLjU5LKtLgFMkyfUsrCg6Dxmu751xLVumrIP_PKl8Lf93SnX46lJnDuXyEWrUNOMTs18")'></div>
+<div class="p-4">
+<h2 class="text-xl font-bold leading-tight mb-2 dark:text-white">The Art of Quiet Observation</h2>
+<p class="essay-snippet text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    In the heart of a bustling metropolis, there exists a brief window of time where the city breathes in silence. I found myself wandering through the narrow alleys of Bukchon, capturing the essence of morning light as it hit the Hanok rooftops...
+                </p>
+<div class="mt-4 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-4">
+<div class="flex gap-4">
+<div class="flex items-center gap-1.5 group cursor-pointer">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-red-500 transition-colors">favorite</span>
+<span class="text-xs font-bold text-slate-500">128</span>
+</div>
+<div class="flex items-center gap-1.5 group cursor-pointer">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">chat_bubble</span>
+<span class="text-xs font-bold text-slate-500">24</span>
+</div>
+<div class="flex items-center gap-1.5 cursor-pointer">
+<span class="material-symbols-outlined text-slate-400">mood</span>
+</div>
+</div>
+<button class="text-xs font-bold text-primary flex items-center gap-1">
+                        READ FULL <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<article class="mt-8 px-4">
+<div class="flex items-center gap-3 mb-3">
+<div class="size-10 rounded-full border-2 border-primary/20 bg-center bg-cover" data-alt="Portrait of female essay author Jun-ho Lee" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArIcwPb2Q-sHLvxYfdx01KPDyFv1YdkigCbMwXaDbRpKYLWRdF_jg1PgIQknUrzQcaimc88-3OVf3h64H6sFVxyjX6f_tdnp9NRKo6wVooBQIZ-h4SydxsBZgXOLr1LrSNPWRcjl3STzkROD4buzcDX9EO-JWYxvcM1MQFirrrNvDrpq4EpZU0b7sPDv8CTisqV1aSGDE7YMHlOoD-uqN456OMPr-BYiFo2_OgFrcJ5M9UTyRJiWfwJ0JzjQZUrHDRmW6pCftdBPI")'></div>
+<div>
+<div class="flex items-center gap-1">
+<span class="text-sm font-bold dark:text-white">Jun-ho Lee</span>
+<span class="material-symbols-outlined text-primary text-[14px]">verified</span>
+</div>
+<p class="text-[11px] text-slate-500 dark:text-slate-400">5 hours ago • Naver Cafe: Philosophy Daily</p>
+</div>
+<button class="ml-auto">
+<span class="material-symbols-outlined text-slate-400">more_horiz</span>
+</button>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="w-full aspect-[16/9] bg-center bg-cover relative" data-alt="Foggy mountain landscape with a lonely hiker" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCdQ0a-2vgUudNW7x9xEnmec2oZpnJIYuXqeEuQ4R3NOhbucIKhrdBz_BF62Y_Frt-_kME31vAKAL6FWfA-Ln0osq24J902JsnhFf1rmlSK84WTCioMczv9jNaDtj0Hp0wZ2yqT1RzROMxHHCFzBkQ_NWt-8KXnAaULu1vWtNvaVVofrGYRDRbX8zl7hwfraAa6_6n5Ay_NTEUM7r851xHoM4LYOI9TViYJ4KGhqH0gWSNeey-1s6BEn4B9xeXhkUrqh8na-ski9vo")'>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-slate-800/40">
+<div class="h-full bg-primary w-1/3"></div>
+</div>
+<div class="absolute top-2 right-2 bg-black/40 backdrop-blur-md px-2 py-1 rounded text-[10px] text-white font-bold uppercase tracking-wide">
+                    3 min left
+                </div>
+</div>
+<div class="p-4">
+<h2 class="text-xl font-bold leading-tight mb-2 dark:text-white">Why We Write Alone</h2>
+<p class="essay-snippet text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Solitude is not loneliness; it is the space where the soul speaks. For an essayist, the blank page is a companion that demands honesty. When we retreat into our quiet corners, we are not hiding from the world...
+                </p>
+<div class="mt-4 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-4">
+<div class="flex gap-4">
+<div class="flex items-center gap-1.5 group cursor-pointer">
+<span class="material-symbols-outlined text-red-500 fill-[1]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-xs font-bold text-slate-500">452</span>
+</div>
+<div class="flex items-center gap-1.5 group cursor-pointer">
+<span class="material-symbols-outlined text-slate-400">chat_bubble</span>
+<span class="text-xs font-bold text-slate-500">89</span>
+</div>
+<div class="flex items-center gap-1.5 cursor-pointer">
+<span class="material-symbols-outlined text-slate-400">mood</span>
+</div>
+</div>
+<button class="text-xs font-bold text-primary flex items-center gap-1">
+                        CONTINUE <span class="material-symbols-outlined text-sm">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<article class="mt-8 px-4 opacity-80">
+<div class="flex items-center gap-2 mb-3">
+<span class="px-2 py-1 rounded bg-primary text-white text-[10px] font-bold">#TRAVEL_MEMOIR</span>
+<span class="text-[11px] text-slate-500">Recommended for you</span>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="w-full aspect-[16/9] bg-center bg-cover" data-alt="Aerial view of green mountains in Switzerland" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDWYeZTTb0Owo2ywGar-JOiQzUidJ1xnyYz-UwbAOUjpPHOdksDIfVLmYg0hqD4sIWWt_hvYqKfU3IioCI7lnd8IBV4sBwOYRryys_whjWuaeYjtermtHRXrnpCurRU9MTgH0QegCuS6pVU-avD_OsICHfWduNJD2R2w61QHwV9SNoAFI_e1rqSlv9ucWCfzxbp94jnyv1oF45oahrvJiLEprtjUzMCmRnALBTI59XK3OAqo7mEj0V-1vRJ6TfNFEQKEp-HlfTIEes")'></div>
+<div class="p-4">
+<h2 class="text-xl font-bold leading-tight mb-2 dark:text-white">Alpine Echoes</h2>
+<p class="essay-snippet text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    The air at three thousand meters is different. It's thin, cold, and carries the scent of ancient ice. In Switzerland, I learned that distance isn't measured in kilometers, but in the echoes of the bells...
+                </p>
+<div class="mt-4 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-4">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-slate-300 bg-cover" data-alt="Author profile small" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhVtya3vpRT0q9XDuDUXi8yt4WEbql4t0ipWgvz9yw9Jkrtj9oIRJpYaoaIxqkF_cgncrhjjQSqSFDEnlAulxVpQeg_1swjQeSs6GPRRfCRxSqB_7JPufOY9HxJRY22HTpCZ7qo325jaJzv2YAGdOFQ7YM9GSSFdTyobVj7YQ8v8U0Z4cu-OnTXx8vmwbAJ94-9Py5TGfSLHmXHaU6RLYh7zTK_HZJXFWUJTrk3S6lqeKO1NnNpkEqs7gpyu33F_fQLdQJ01tjxvs")'></div>
+<span class="text-xs font-medium dark:text-slate-300">Elena Rossi</span>
+</div>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-slate-400 text-lg">bookmark</span>
+<span class="material-symbols-outlined text-slate-400 text-lg">share</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 pb-safe">
+<div class="flex items-center justify-around h-16 max-w-md mx-auto">
+<button class="flex flex-col items-center justify-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Feed</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-slate-500">
+<span class="material-symbols-outlined">search</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Explore</span>
+</button>
+<button class="flex items-center justify-center size-12 rounded-full bg-primary -translate-y-4 shadow-lg shadow-primary/40 border-4 border-background-light dark:border-background-dark">
+<span class="material-symbols-outlined text-white">edit_square</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-slate-500">
+<span class="material-symbols-outlined">forum</span>
+<span class="text-[10px] font-extrabold uppercase tracking-tighter">Cafe</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-slate-500">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-extrabold uppercase tracking-tighter">Profile</span>
+</button>
+</div>
+</nav>
+
+</body></html>
