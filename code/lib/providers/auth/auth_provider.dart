@@ -1,10 +1,10 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../models/auth/auth_state.dart';
 import '../../services/auth/naver_login_service.dart';
 import '../../services/auth/naver_login_service_impl.dart';
 import '../../services/auth/secure_token_repository.dart';
+import '../../utils/secure_logger.dart';
 
 // Service providers for dependency injection (can be overridden in tests)
 final naverLoginServiceProvider = Provider<NaverLoginService>((ref) {
@@ -30,7 +30,7 @@ class AuthNotifier extends Notifier<AuthState> {
   Future<void> login() async {
     // Prevent concurrent login attempts
     if (_isLoginInProgress) {
-      debugPrint('[AuthNotifier] Login already in progress, ignoring');
+      SecureLogger.log('AuthNotifier', 'Login already in progress, ignoring');
       return;
     }
 

@@ -1,5 +1,4 @@
-import 'package:flutter/foundation.dart';
-
+import '../../utils/secure_logger.dart';
 import 'naver_sdk_initializer.dart';
 
 /// Naver SDK 초기화 서비스 구현체
@@ -31,14 +30,14 @@ class NaverSdkInitializerImpl implements NaverSdkInitializer {
       // 필요한 설정:
       // Android: AndroidManifest.xml에 client_id, client_secret, client_name 메타데이터
       // iOS: Info.plist에 NidConsumerKey, NidConsumerSecret, NidServiceName
-      debugPrint('[NaverSDK] auto-initialized (v2.1.1)');
-      debugPrint('[NaverSDK] clientId length: ${_config.clientId.length}');
-      debugPrint('[NaverSDK] clientSecret length: ${_config.clientSecret.length}');
-      debugPrint('[NaverSDK] clientName: ${_config.clientName}');
+      SecureLogger.log('NaverSDK', 'auto-initialized (v2.1.1)');
+      SecureLogger.log('NaverSDK', 'clientId length: ${_config.clientId.length}');
+      SecureLogger.log('NaverSDK', 'clientSecret length: ${_config.clientSecret.length}');
+      SecureLogger.log('NaverSDK', 'clientName: ${_config.clientName}');
       _isInitialized = true;
       return SdkInitResult.success;
     } catch (e) {
-      debugPrint('Naver SDK initialization check failed');
+      SecureLogger.logError('NaverSDK', 'initialization check failed');
       return SdkInitResult.error;
     }
   }

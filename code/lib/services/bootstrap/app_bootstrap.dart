@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import '../../config/naver_config.dart';
+import '../../utils/secure_logger.dart';
 import '../auth/naver_sdk_initializer.dart';
 import '../auth/naver_sdk_initializer_impl.dart';
 
@@ -42,7 +43,7 @@ class AppBootstrap {
     // SDK 초기화 (실패해도 앱은 계속 실행)
     if (_sdkInitializer == null) {
       _sdkInitializationFailed = true;
-      debugPrint('Naver SDK config not found - login will be unavailable');
+      SecureLogger.log('AppBootstrap', 'Naver SDK config not found - login will be unavailable');
       return;
     }
 
@@ -51,12 +52,12 @@ class AppBootstrap {
 
       if (result == SdkInitResult.error) {
         _sdkInitializationFailed = true;
-        debugPrint('Naver SDK initialization failed - login may be unavailable');
+        SecureLogger.log('AppBootstrap', 'Naver SDK initialization failed - login may be unavailable');
       }
     } catch (e) {
       // 예상치 못한 예외도 안전하게 처리
       _sdkInitializationFailed = true;
-      debugPrint('Unexpected error during SDK initialization');
+      SecureLogger.logError('AppBootstrap', 'Unexpected error during SDK initialization');
     }
   }
 }

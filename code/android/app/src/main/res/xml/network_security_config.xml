@@ -8,5 +8,15 @@
     <domain-config cleartextTrafficPermitted="false">
         <domain includeSubdomains="true">nid.naver.com</domain>
         <domain includeSubdomains="true">openapi.naver.com</domain>
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+        <!-- Certificate Pinning for Naver OAuth APIs -->
+        <!-- Primary: Naver server certificate (*.naver.com) -->
+        <!-- Backup: DigiCert TLS Hybrid ECC SHA384 2020 CA1-1 intermediate CA -->
+        <pin-set expiration="2027-03-17">
+            <pin digest="SHA-256">kpKECjVGaQnG6RRns+7F6LwBtfBPZkxiSs64i62v7eo=</pin>
+            <pin digest="SHA-256">e0IRz5Tio3GA1Xs4fUVWmH1xHDiH2dMbVtCBSkOIdqM=</pin>
+        </pin-set>
     </domain-config>
 </network-security-config>
